@@ -1,9 +1,65 @@
 <script lang="ts">
-	import Button from '@smui/button';
+	import IconButton from '@smui/icon-button';
+	import List, { Item, Text } from '@smui/list';
+
+	function addTask() {
+		alert('add task');
+	}
+	function editTask() {
+		alert('edit task');
+	}
+	function addGoal() {
+		alert('add goal');
+	}
+	function editGoal() {
+		alert('edit goal');
+	}
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div class="view-inner">
+	<div class="view-inner-item today">
+		<p class="section-title">today's tasks <IconButton on:click={addTask}>+</IconButton></p>
+		<List>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+		</List>
+	</div>
 
-<Button on:click={() => alert('Primary button clicked')}>Primary</Button>
-<Button on:click={() => alert('Secondary button clicked')} color="secondary">Secondary</Button>
+	<div class="view-inner-item goals">
+		<p class="section-title">goals <IconButton on:click={addGoal}>+</IconButton></p>
+		<List>
+			<Item href="javascript:void(0)" on:click={editGoal}>
+				<Text>1000 Youtube subscribers</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editGoal}>
+				<Text>$2000 a month freelancing income</Text>
+			</Item>
+		</List>
+	</div>
+</div>
+
+<style>
+	.view-inner {
+		display: flex;
+		padding: 0 2em;
+	}
+	.view-inner-item {
+		flex: 1;
+	}
+
+	.section-title {
+		font-size: 2rem;
+		display: flex;
+		align-items: center;
+	}
+</style>
