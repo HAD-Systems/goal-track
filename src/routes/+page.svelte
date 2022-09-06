@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { mdiPlus } from '@mdi/js';
 
+	import Button from '$lib/components/_Button.svelte';
+
 	import List, { Item, Text } from '@smui/list';
 
 	function addTask() {
@@ -21,13 +23,13 @@
 	<div class="view-inner-item today">
 		<p class="section-title">
 			today's tasks
-			<button on:click={addTask}>
+			<Button on:click={addTask}>
 				<span class="icon size-400">
 					<svg viewBox="0 0 24 24">
 						<path fill="currentColor" d={mdiPlus} />
 					</svg>
 				</span>
-			</button>
+			</Button>
 		</p>
 		<List>
 			<Item href="javascript:void(0)" on:click={editTask}>
@@ -120,13 +122,13 @@
 	<div class="view-inner-item goals">
 		<p class="section-title">
 			goals
-			<button on:click={addGoal}>
+			<Button on:click={addGoal}>
 				<span class="icon size-400">
 					<svg viewBox="0 0 24 24">
 						<path fill="currentColor" d={mdiPlus} />
 					</svg>
 				</span>
-			</button>
+			</Button>
 		</p>
 		<List>
 			<Item href="javascript:void(0)" on:click={editGoal}>

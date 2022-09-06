@@ -64,6 +64,7 @@ button:hover, button:focus,
 }
 .icon {
   display: inline-flex;
+  --icon-width: 1.5rem;
 }
 
 .icon svg {

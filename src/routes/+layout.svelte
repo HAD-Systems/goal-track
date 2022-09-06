@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Button from '@smui/button';
-	import IconButton, { Icon } from '@smui/icon-button';
+	import Button from '$lib/components/_Button.svelte';
+
 	import {
 		mdiMenu,
 		mdiWindowClose,
@@ -9,7 +9,6 @@
 		mdiWeatherNight,
 		mdiCogOutline
 	} from '@mdi/js';
-	import { Svg } from '@smui/common/elements';
 
 	let darkTheme: boolean | undefined = undefined;
 	let menuOpen: boolean | undefined = undefined;
@@ -54,11 +53,13 @@
 	<div class="main">
 		{#if miniWindow}
 			<div class="nav-main-toggle">
-				<IconButton on:click={() => (menuOpen = !menuOpen)}>
-					<Icon component={Svg} viewBox="0 0 24 24">
-						<path fill="currentColor" d={menuOpen ? mdiWindowClose : mdiMenu} />
-					</Icon>
-				</IconButton>
+				<Button on:click={() => (menuOpen = !menuOpen)}>
+					<span class="icon">
+						<svg viewBox="0 0 24 24">
+							<path fill="currentColor" d={menuOpen ? mdiWindowClose : mdiMenu} />
+						</svg>
+					</span>
+				</Button>
 			</div>
 		{/if}
 		<aside class="sidebar {menuOpen ? 'is-open' : ''}">
@@ -90,20 +91,20 @@
 			</div>
 
 			<div class="sidebar-end">
-				<IconButton on:click={() => (settingsOpen = !settingsOpen)}>
-					<Icon component={Svg} viewBox="0 0 24 24">
-						<path fill="currentColor" d={mdiCogOutline} />
-					</Icon>
-				</IconButton>
-				<IconButton
-					aria-label="Toggle Dark Mode"
-					on:click={() => (darkTheme = !darkTheme)}
-					title={darkTheme ? 'Light' : 'Dark'}
-				>
-					<Icon component={Svg} viewBox="0 0 24 24">
-						<path fill="currentColor" d={darkTheme ? mdiWeatherSunny : mdiWeatherNight} />
-					</Icon>
-				</IconButton>
+				<Button on:click={() => (settingsOpen = !settingsOpen)}>
+					<span class="icon">
+						<svg viewBox="0 0 24 24">
+							<path fill="currentColor" d={mdiCogOutline} />
+						</svg>
+					</span>
+				</Button>
+				<Button aria-label="Toggle Dark Mode" on:click={() => (darkTheme = !darkTheme)}>
+					<span class="icon">
+						<svg viewBox="0 0 24 24">
+							<path fill="currentColor" d={darkTheme ? mdiWeatherSunny : mdiWeatherNight} />
+						</svg>
+					</span>
+				</Button>
 			</div>
 		</aside>
 
@@ -151,7 +152,6 @@
 	}
 	.page.is-mobile .sidebar {
 		max-width: 80vw;
-		padding-top: 72px;
 	}
 	.page.is-mobile .sidebar:not(.is-open) {
 		transform: translateX(-100%);
