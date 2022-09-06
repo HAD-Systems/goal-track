@@ -1,5 +1,6 @@
 <script lang="ts">
-	import IconButton from '@smui/icon-button';
+	import { mdiPlus } from '@mdi/js';
+
 	import List, { Item, Text } from '@smui/list';
 
 	function addTask() {
@@ -18,8 +19,89 @@
 
 <div class="view-inner">
 	<div class="view-inner-item today">
-		<p class="section-title">today's tasks <IconButton on:click={addTask}>+</IconButton></p>
+		<p class="section-title">
+			today's tasks
+			<button on:click={addTask}>
+				<span class="icon size-400">
+					<svg viewBox="0 0 24 24">
+						<path fill="currentColor" d={mdiPlus} />
+					</svg>
+				</span>
+			</button>
+		</p>
 		<List>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Make video</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Send 5 proposals on Upwork</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Go for a run</Text>
+			</Item>
+			<Item href="javascript:void(0)" on:click={editTask}>
+				<Text>Call grandma</Text>
+			</Item>
 			<Item href="javascript:void(0)" on:click={editTask}>
 				<Text>Make video</Text>
 			</Item>
@@ -36,7 +118,16 @@
 	</div>
 
 	<div class="view-inner-item goals">
-		<p class="section-title">goals <IconButton on:click={addGoal}>+</IconButton></p>
+		<p class="section-title">
+			goals
+			<button on:click={addGoal}>
+				<span class="icon size-400">
+					<svg viewBox="0 0 24 24">
+						<path fill="currentColor" d={mdiPlus} />
+					</svg>
+				</span>
+			</button>
+		</p>
 		<List>
 			<Item href="javascript:void(0)" on:click={editGoal}>
 				<Text>1000 Youtube subscribers</Text>
