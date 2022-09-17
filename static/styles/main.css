@@ -5,3 +5,7 @@
 	--dashboard-header-background: var(--ink);
 	/* --dashboard-header-background: var(--ink); */
 }
+
+html, body {
+	height: 100%;
+}

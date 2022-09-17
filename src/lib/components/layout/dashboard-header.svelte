@@ -4,7 +4,7 @@
 </script>
 
 <header class="dashboard-header">
-  <div class="container mx-auto h-full">
+  <div class="container h-full">
     <div class="inner">
       <nav class="nav-main">
         <ul>
@@ -27,6 +27,9 @@
 <style>
 	.dashboard-header {
     height: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
 	}
 	.inner {
 		display: flex;

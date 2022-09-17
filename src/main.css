@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-	.dashboard-header {
+	/* .dashboard-header {
 		@apply bg-indigo-100;
+	} */
+	.dashboard-content {
+		@apply bg-gray-100;
 	}
-	.dashboard-sidebar {
+	.sidebar {
 		@apply bg-orange-100;
 	}
-	.dashboard-main {
-		@apply bg-gray-100;
+	.container {
+		@apply mx-auto w-full px-4 sm:px-6 lg:px-8;
 	}
 }

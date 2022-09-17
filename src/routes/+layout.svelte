@@ -27,21 +27,38 @@
   }
 </script>
 
-
-<DashboardHeader />
-
-<div class="flex">
+<div class="dashboard-wrapper">
   <DashboardSidebar />
   
-  <main class="dashboard-main">
-    <slot />
-  </main>
+  <div class="dashboard-content">
+    <DashboardHeader />
+    
+    <main class="dashboard-main">
+      <div class="container h-full">
+        <div class="inner">
+          <slot />
+          <p>Width: {innerWidth}</p>
+          <p>
+            Fixed Sidebar:
+            {#if miniWindow} Closed
+            {:else} Open
+            {/if}
+          </p>
+        </div>
+      </div>
+    </main>
+
+  </div>
 </div>
 
-Width: {innerWidth}
-
 <style>
-  .dashboard-main {
+  .dashboard-wrapper {
+    display: flex;
+    height: 100%;
+  }
+  .dashboard-content {
     flex: 1;
+    position: relative;
+    padding-top: 4rem;
   }
 </style>
