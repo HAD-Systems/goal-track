@@ -22,13 +22,13 @@
   function setMiniWindow() {
     if (typeof window !== 'undefined') {
       innerWidth = window.innerWidth;
-      miniWindow = innerWidth < 720;
+      miniWindow = innerWidth < 768;
     }
   }
 </script>
 
 <div class="dashboard-wrapper">
-  <DashboardSidebar />
+  <DashboardSidebar propIsMiniWindow={miniWindow} />
   
   <div class="dashboard-content">
     <DashboardHeader />
@@ -59,6 +59,6 @@
   .dashboard-content {
     flex: 1;
     position: relative;
-    padding-top: 4rem;
+    padding-top: var(--dashboard-header-height)
   }
 </style>

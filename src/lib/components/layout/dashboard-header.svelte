@@ -26,7 +26,7 @@
 
 <style>
 	.dashboard-header {
-    height: 4rem;
+    height: var(--dashboard-header-height);
     position: absolute;
     top: 0;
     right: 0;

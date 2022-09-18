@@ -3,7 +3,12 @@
 	--surface: #0e0e0e;
 
 	--dashboard-header-background: var(--ink);
-	/* --dashboard-header-background: var(--ink); */
+	--dashboard-header-height: 4rem;
+
+	--transition-duration: 0.3s;
+	--transition-easing: cubic-bezier(0.4, 0, 0, 1);
+
+	--js-sidebar-transition: var(--transition-duration);
 }
 
 html, body {
