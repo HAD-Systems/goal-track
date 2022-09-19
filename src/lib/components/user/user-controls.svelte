@@ -27,7 +27,7 @@
   }
 </script>
 
-<Menu as="div" class="relative">
+<Menu as="div" class="relative flex">
   <MenuButton class="rounded-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-black">
     <img class="w-10 h-10 rounded-full" src="{assets}/images/placeholder-avatar.jpg" alt="Rounded avatar">
   </MenuButton>

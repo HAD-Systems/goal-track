@@ -8,6 +8,8 @@
 	--transition-duration: 0.3s;
 	--transition-easing: cubic-bezier(0.4, 0, 0, 1);
 
+	--sidebar-overlay-background: var(--surface);
+
 	--js-sidebar-transition: var(--transition-duration);
 }
 

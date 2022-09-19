@@ -59,6 +59,12 @@
   .dashboard-content {
     flex: 1;
     position: relative;
-    padding-top: var(--dashboard-header-height)
+    padding-top: var(--dashboard-header-height);
+	  transition: padding-left var(--transition-duration) var(--transition-easing);
   }
+@media (min-width: 768px) {
+	.dashboard-content {
+		padding-left: 5rem;
+	}
+}
 </style>

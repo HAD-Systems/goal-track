@@ -1,6 +1,8 @@
 <svelte:window on:resize={closeSidebar} />
 
 <script lang="ts">
+	import { MenuIcon, CogIcon } from "@rgossiaux/svelte-heroicons/outline";
+
 	import {
 	  Menu,
 	  MenuItem,
@@ -48,8 +50,17 @@
 	export let propIsMiniWindow
 </script>
 {#if propIsMiniWindow}
-	<button class="sidebar-toggle" on:click={toggleSidebar}>toggle menu</button>
+<div class="sidebar-toggle-wrapper">
+	<div class="container">
+		<button class="sidebar-toggle" on:click={toggleSidebar}>
+			<MenuIcon class="h-6 w-6" aria-hidden="true" />
+		</button>
+	</div>
+</div>
 {/if}
+
+<div class="sidebar-overlay" class:isOpen={isOpen} on:click={closeSidebar}></div>
+
 <aside class="sidebar" class:isMobile={propIsMiniWindow} class:hasTransition={hasTransition} class:isOpen={isOpen}>
 	<p>logo</p>
 	<Menu as="ul">
@@ -64,7 +75,10 @@
 			</MenuItem>
 		</li>
 	</Menu>
-	<button>settings</button>
+	<button>
+		modal
+		<CogIcon class="h-6 w-6" aria-hidden="true" />
+	</button>
 </aside>
 
 <style>
@@ -74,7 +88,6 @@
     justify-content: space-between;
 	align-items: center;
 
-    max-width: 5rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -83,6 +96,22 @@
     height: 100%;
 	transform: translateX(-100%);
 }
+@media (max-width: 499px) and (min-width: 500px) {
+	.sidebar {
+		max-width: 75%;
+	}
+}
+@media (max-width: 767px) {
+	.sidebar {
+		max-width: 320px;
+	}
+}
+@media (min-width: 768px) {
+	.sidebar {
+		max-width: 5rem;
+	}
+}
+
 .sidebar.hasTransition {
 	transition: transform var(--transition-duration) var(--transition-easing);
 }
@@ -91,10 +120,33 @@
 	transform: none;
 }
 
-.sidebar-toggle {
+.sidebar-toggle-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
+	height: var(--dashboard-header-height);
+	display: flex;
+	align-items: center;
+}
+.sidebar-toggle {
+	display: flex;
+	align-items: center;
+}
+.sidebar-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: var(--sidebar-overlay-background);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity var(--transition-duration) var(--transition-easing);
+}
+.sidebar-overlay.isOpen {
+	opacity: 0.75;
+	pointer-events: auto;
 }
 </style>
