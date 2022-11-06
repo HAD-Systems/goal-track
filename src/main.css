@@ -7,7 +7,7 @@
 		@apply bg-indigo-100;
 	} */
 	.dashboard-content {
-		@apply bg-gray-100;
+		@apply bg-white;
 	}
 	.sidebar {
 		@apply bg-orange-100;
